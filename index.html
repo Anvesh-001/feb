@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Advance Happy Birthday Hima Sister 🎉</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-b from-pink-100 to-purple-200 flex items-center justify-center min-h-screen">
+
+  <div class="text-center bg-white shadow-lg rounded-2xl p-10">
+    <h1 class="text-4xl md:text-5xl font-bold mb-6 text-pink-600">
+      🎂 Advance Happy Birthday Hima Sister 🎂
+    </h1>
+
+    <p class="text-xl font-semibold mb-4">
+      Countdown to February 18 🎈
+    </p>
+
+    <div id="countdown" class="text-3xl font-mono text-purple-600"></div>
+  </div>
+
+  <script>
+    // Set Birthday Date (Feb 18, 2026)
+    const birthday = new Date("2026-02-18T00:00:00").getTime();
+
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const diff = birthday - now;
+
+      if (diff <= 0) {
+        clearInterval(timer);
+        document.getElementById("countdown").innerHTML =
+          "🎉🎂  Advance HAPPY BIRTHDAY HIMA SISTER 🎂🎉";
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      document.getElementById("countdown").innerHTML =
+        `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }, 1000);
+  </script>
+
+</body>
+</html>
